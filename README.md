@@ -1,4 +1,8 @@
-# References
+# What libraries
+
+* **Python library**: A tool library created by jaanca.
+
+# Referencias para publicar los paquetes en pypi.org
 
 https://packaging.python.org/en/latest/tutorials/packaging-projects/
 https://python-poetry.org/docs/pyproject/

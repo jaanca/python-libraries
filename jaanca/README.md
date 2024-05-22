@@ -1,6 +1,4 @@
----
-
-# What's libraries
+# What libraries
 
 * **Python library**: A tool library created by jaanca.
 
