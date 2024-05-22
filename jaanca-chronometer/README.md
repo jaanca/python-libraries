@@ -1,10 +1,7 @@
----
-
-# What's libraries
+# What libraries
 
 * **Python library**: A tool library created by jaanca that allows measuring the time between two moments in the source code.
 * **Analyze results in database**: The output format can be inserted in an INTERVAL attribute for example in PostgreSQL and add the time of several processes.
-
 
 ---
 
