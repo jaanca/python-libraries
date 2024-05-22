@@ -54,7 +54,7 @@ SELECT SUM(time) FROM process_execution WHERE description = 'process_simulator';
 
 # Semantic Versioning
 
-logyca < MAJOR >.< MINOR >.< PATCH >
+jaanca-library < MAJOR >.< MINOR >.< PATCH >
 
 * **MAJOR**: version when you make incompatible API changes
 * **MINOR**: version when you add functionality in a backwards compatible manner
@@ -91,6 +91,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Examples of use are added to the documentation of the functions in docstring
 - In the samples folder of this library, there are complete working examples of using the code.
 
-## [0.1.0] - 2024-05-21
+## [0.1.X] - 2024-05-21
 ### Added
 - Completion of testing and launch into production.

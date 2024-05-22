@@ -10,7 +10,6 @@ https://python-poetry.org/docs/pyproject/
 
 # Before uploading any changes, you must first run the unit tests is it exists
 
-cd Logyca\tests
 ```console
 # Pre-requisite
 pip install pytest -y
