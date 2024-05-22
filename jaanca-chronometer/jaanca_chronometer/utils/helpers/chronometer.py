@@ -33,6 +33,7 @@ class Chronometer:
 
         ## Example
         ```Python
+        from jaanca_chronometer import Chronometer
         import time
 
         chronometer=Chronometer()
@@ -49,3 +50,5 @@ class Chronometer:
         seconds = int(elapsed_seconds % 60)
         return Interval(hours, minutes, seconds)
 
+    def get_format_time(self)->str:
+        return "HH:mm:ss"

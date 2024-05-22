@@ -4,6 +4,8 @@ import time
 if __name__=="__main__":
     chronometer=Chronometer()
 
+    print(f"date_time format or interval format: {chronometer.get_format_time()}")
+
     chronometer.start()
     time.sleep(1)
     chronometer.stop()
