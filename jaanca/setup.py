@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 COMPANY_NAME="jaanca"
 PACKAGE_NAME = "jaanca"
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 
 install_requires = []
 
@@ -14,7 +14,7 @@ setup(
     long_description=open('README.md', 'r').read(),
     long_description_content_type='text/markdown',
     license='MIT License',
-    author='Andres Cardona',
+    author='Jaime Andres Cardona Carrillo',
     author_email='jacardona@outlook.com',
     url='https://github.com/jaanca/python-libraries/tree/main/jaanca',
     keywords="python tools, libraries",

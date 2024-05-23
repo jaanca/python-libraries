@@ -1,7 +1,27 @@
-# What libraries
+<p align="center">
+    <em>jaanca public libraries</em>
+</p>
+
+<p align="center">
+<a href="https://pypi.org/project/jaanca-chronometer" target="_blank">
+    <img src="https://img.shields.io/pypi/v/jaanca-chronometer?color=blue&label=PyPI%20Package" alt="Package version">
+</a>
+<a href="(https://www.python.org" target="_blank">
+    <img src="https://img.shields.io/badge/Python-%5B%3E%3D3.8%2C%3C%3D3.11%5D-blue" alt="Python">
+</a>
+</p>
+
+
+---
+
+#  A tool library created by jaanca
 
 * **Python library**: A tool library created by jaanca that allows measuring the time between two moments in the source code.
 * **Analyze results in database**: The output format can be inserted in an INTERVAL attribute for example in PostgreSQL and add the time of several processes.
+
+[Source code](https://github.com/jaanca/python-libraries/tree/main/jaanca-chronometer)
+| [Package (PyPI)](https://pypi.org/project/jaanca-chronometer/)
+| [Samples](https://github.com/jaanca/python-libraries/tree/main/jaanca-chronometer/samples)
 
 ---
 
@@ -54,7 +74,7 @@ SELECT SUM(time) FROM process_execution WHERE description = 'process_simulator';
 
 # Semantic Versioning
 
-jaanca-library < MAJOR >.< MINOR >.< PATCH >
+jaanca-chronometer < MAJOR >.< MINOR >.< PATCH >
 
 * **MAJOR**: version when you make incompatible API changes
 * **MINOR**: version when you add functionality in a backwards compatible manner
@@ -88,9 +108,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.1rcX] - 2024-05-21
 ### Added
 - First tests using pypi.org in develop environment.
-- Examples of use are added to the documentation of the functions in docstring
-- In the samples folder of this library, there are complete working examples of using the code.
 
 ## [0.1.X] - 2024-05-21
 ### Added
 - Completion of testing and launch into production.
+
+## [0.1.3] - 2024-05-23
+### Added
+- Documentation improvements.
