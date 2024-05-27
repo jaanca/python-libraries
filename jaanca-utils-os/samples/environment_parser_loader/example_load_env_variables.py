@@ -1,6 +1,20 @@
 from jaanca_utils_os import EnvironmentParserLoader, FileFolderManagement
 from prettytable import PrettyTable
 
+''' Considerations on environmental variables
+- An object must be specified with the variables that you want to create.
+- The attributes of these objects will be loaded with the environment variables, according to the name assigned to them.
+- If the attribute is mandatory, it will only be of type str and will contain the name of the environment variable to read.
+- If the environment variable is optional or may not exist, the attribute must be of type tuple or list, where the first element is the environment variable to read and the second the default value to assign.
+
+Example:
+class Environment:
+    ENV_VAR_NO_EXIT = ("VARIABLE","Not Exist")
+    ENV_VAR_IS_MANDATORY = "VARIABLE"
+
+
+'''
+
 class Environment:
     HOST = "ENGINE_POSTGRES_CONN_HOST"
     DB_NAME = "ENGINE_POSTGRES_CONN_DB"
