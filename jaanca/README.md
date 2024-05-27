@@ -24,6 +24,7 @@
 # Here is a non-exhaustive list of related packages:
 
 - [jaanca-chronometer](https://pypi.org/project/jaanca-chronometer/) : jaanca's helper chronometer
+- [jaanca-datetime](https://pypi.org/project/jaanca-datetime/) : jaanca's helper for date and time management and moving dates between time days by UTC
 
 ---
 
@@ -70,6 +71,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Completion of testing and launch into production.
 
-## [0.1.3] - 2024-05-23
+## [0.1.2] - 2024-05-23
 ### Added
 - Documentation improvements.
+
+## [0.1.3] - 2024-05-24
+### Added
+- New feature jaanca-datetime.

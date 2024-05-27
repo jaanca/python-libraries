@@ -28,7 +28,7 @@ class Chronometer:
         self.__start_time=0
         self.__end_time=0
     def get_elapsed_time(self)->Interval:
-        '''Descripcion
+        '''Description
         :return Interval(str): HH:mm:ss format supported for inserting records into databases and adding elapsed times
 
         ## Example
