@@ -86,14 +86,25 @@ class EnvironmentParserLoader:
         NO_DATA_LIST = ["VARIABLE","Not Exist"]
         NO_DATA_BOOL = ["VARIABLE","1"]
 
+    ############
+    # select the location of the file to read
+    ############
+
+    ############
+    # Option 1
+    # Run the script from where the default environment variables .env file is located
+    # settings:Environment = EnvironmentParserLoader(Environment)
+
+    ############
+    # Other Options
+    # Load varibles from current folder and subfolders
+    env_full_path = FileFolderManagement.build_full_path_from_current_folder(__file__,filename=".env",folder_list=["folder2"])
+    # Load varibles from disk path: c:\tmp
+    env_full_path = FileFolderManagement.build_full_path_to_file("c:",file_name=".env",folder_list=["tmp"])
     # Load varibles from current folder
     env_full_path = FileFolderManagement.build_full_path_from_current_folder(__file__,filename=".env")
-    # Load varibles from current folder and subfolders
-    # env_full_path = FileFolderManagement.build_full_path_from_current_folder(__file__,filename=".env",folder_list=["folder2"])
-    # Load varibles from disk path: c:\tmp
-    # env_full_path = FileFolderManagement.build_full_path_to_file("c:",file_name=".env",folder_list=["tmp"])
 
-    settings = EnvironmentParserLoader(Environment,env_full_path=env_full_path)
+    settings:Environment = EnvironmentParserLoader(Environment,env_full_path=env_full_path)
 
     def print_attributes(cls):
         columns = ["Name", "Type", "Value"]
@@ -107,7 +118,9 @@ class EnvironmentParserLoader:
 
     ```
     '''
-    def __init__(self,cls,env_full_path:str):
+    def __init__(self,cls,env_full_path:str=''):
+        if env_full_path == '':
+            env_full_path = Path('.') / '.env'
         load_dotenv(dotenv_path=env_full_path)
         for key, value in vars(cls).items():
             if not key.startswith('__'):

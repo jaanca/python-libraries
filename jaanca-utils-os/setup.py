@@ -3,11 +3,11 @@ from setuptools import setup, find_packages
 
 COMPANY_NAME="jaanca"
 PACKAGE_NAME = "jaanca-utils-os"
-VERSION = "0.1.1"
+VERSION = "0.1.6"
 
 install_requires = [""]
 extras_require = {
-    "dotenv": "python-dotenv>=1.0.1"
+    "dotenv": "python-dotenv>=1.0.0"
 }
 
 setup(

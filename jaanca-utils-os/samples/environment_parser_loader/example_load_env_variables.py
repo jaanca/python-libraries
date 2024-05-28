@@ -35,14 +35,25 @@ class Environment:
     NO_DATA_LIST = ["VARIABLE","Not Exist"]
     NO_DATA_BOOL = ["VARIABLE","1"]
 
+############
+# select the location of the file to read
+############
+
+############
+# Option 1
+# Run the script from where the default environment variables .env file is located
+# settings:Environment = EnvironmentParserLoader(Environment)
+
+############
+# Other Options
+# Load varibles from current folder and subfolders
+env_full_path = FileFolderManagement.build_full_path_from_current_folder(__file__,filename=".env",folder_list=["folder2"])
+# Load varibles from disk path: c:\tmp
+env_full_path = FileFolderManagement.build_full_path_to_file("c:",file_name=".env",folder_list=["tmp"])
 # Load varibles from current folder
 env_full_path = FileFolderManagement.build_full_path_from_current_folder(__file__,filename=".env")
-# Load varibles from current folder and subfolders
-# env_full_path = FileFolderManagement.build_full_path_from_current_folder(__file__,filename=".env",folder_list=["folder2"])
-# Load varibles from disk path: c:\tmp
-# env_full_path = FileFolderManagement.build_full_path_to_file("c:",file_name=".env",folder_list=["tmp"])
 
-settings = EnvironmentParserLoader(Environment,env_full_path=env_full_path)
+settings:Environment = EnvironmentParserLoader(Environment,env_full_path=env_full_path)
 
 def print_attributes(cls):
     columns = ["Name", "Type", "Value"]
@@ -53,4 +64,6 @@ def print_attributes(cls):
     print(myTable)        
 
 print_attributes(settings)
+
+print(f"settings.BOOL_FALSE_INCORRECT={settings.BOOL_FALSE_INCORRECT}")
 

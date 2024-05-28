@@ -35,8 +35,9 @@
 ---
 
 # library installation
-```console
-pip install jaanca_utils_os --upgrade
+```console    
+pip install python-dotenv --upgrade
+pip install jaanca_utils_os[dotenv] --upgrade
 ```
 
 ---
@@ -53,13 +54,6 @@ pip install jaanca_utils_os --upgrade
 class Environment:
     ENV_VAR_NO_EXIT = ("VARIABLE","Not Exist")
     ENV_VAR_IS_MANDATORY = "VARIABLE" 
-```
-
-### Prerequisites
-```console    
-pip install prettytable>=3.10.0
-pip install python-dotenv>=1.0.0
-pip install jaanca_utils_os[dotenv]>=0.1.1
 ```
 
 ### File with environments vars .env
@@ -79,6 +73,11 @@ BOOL_TRUE_TWO = "1"
 BOOL_FALSE_ONE = 0
 BOOL_FALSE_TWO = "0"
 BOOL_FALSE_INCORRECT = "incorrect"
+```
+
+### Install prettytable for print output
+```Python
+pip install prettytable==3.10.0
 ```
 
 ### Example
@@ -106,14 +105,25 @@ class Environment:
     NO_DATA_LIST = ["VARIABLE","Not Exist"]
     NO_DATA_BOOL = ["VARIABLE","1"]
 
+############
+# select the location of the file to read
+############
+
+############
+# Option 1
+# Run the script from where the default environment variables .env file is located
+# settings:Environment = EnvironmentParserLoader(Environment)
+
+############
+# Other Options
+# Load varibles from current folder and subfolders
+env_full_path = FileFolderManagement.build_full_path_from_current_folder(__file__,filename=".env",folder_list=["folder2"])
+# Load varibles from disk path: c:\tmp
+env_full_path = FileFolderManagement.build_full_path_to_file("c:",file_name=".env",folder_list=["tmp"])
 # Load varibles from current folder
 env_full_path = FileFolderManagement.build_full_path_from_current_folder(__file__,filename=".env")
-# Load varibles from current folder and subfolders
-# env_full_path = FileFolderManagement.build_full_path_from_current_folder(__file__,filename=".env",folder_list=["folder2"])
-# Load varibles from disk path: c:\tmp
-# env_full_path = FileFolderManagement.build_full_path_to_file("c:",file_name=".env",folder_list=["tmp"])
 
-settings = EnvironmentParserLoader(Environment,env_full_path=env_full_path)
+settings:Environment = EnvironmentParserLoader(Environment,env_full_path=env_full_path)
 
 def print_attributes(cls):
     columns = ["Name", "Type", "Value"]
@@ -242,7 +252,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First tests using pypi.org in develop environment.
 
-## [0.1.0] - 2024-05-27
+## [0.1.1-6] - 2024-05-27
 ### Added
 - Completion of testing and launch into production.
 
