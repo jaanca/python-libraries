@@ -26,6 +26,7 @@
 - [jaanca-chronometer](https://pypi.org/project/jaanca-chronometer/) : jaanca's helper chronometer.
 - [jaanca-datetime](https://pypi.org/project/jaanca-datetime/) : jaanca's helper for date and time management and moving dates between time days by UTC.
 - [jaanca-utils-os](https://pypi.org/project/jaanca-utils-os/) : jaanca's helper for operating system help functions such as reading environment variables, reading/writing files, file properties, among others.
+- [jaanca-utils-encrypt](https://pypi.org/project/jaanca-utils-encrypt/) : jaanca's helper for encrypting and decrypting in different ways.
 
 ---
 
@@ -83,3 +84,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.4-5] - 2024-05-27
 ### Added
 - New feature jaanca-utils-os.
+
+## [0.1.6] - 2024-05-27
+### Added
+- New feature jaanca-utils-encrypt.
