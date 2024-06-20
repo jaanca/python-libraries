@@ -62,6 +62,12 @@ if __name__=="__main__":
     print(f"type[timedelta] to insert into databases like PostgreSQL:{elapsed_time}")
     print(f"timedelta[seconds]:{elapsed_time.seconds}")
     
+    parse_elapsed_time = Chronometer.parse_elapsed_time("20:3:35")
+    print(f"parse_elapsed_time[20:3:35]:{parse_elapsed_time}")
+
+    parse_elapsed_time = Chronometer.parse_elapsed_time("1:1")
+    print(f"parse_elapsed_time[1:1]:{parse_elapsed_time}")
+    
 ```
 
 ---
@@ -135,3 +141,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.4] - 2024-06-20
 ### Changed
 - It is added to the get_elapsed_time function to return the elapsed time in timedelta format, which is accepted to insert the record into a database engine such as PostgreSQL.
+
+## [0.1.5] - 2024-06-20
+### Added
+- New parse_elapsed_time functionality to convert str to timedelta.

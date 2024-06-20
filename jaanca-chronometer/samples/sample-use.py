@@ -26,3 +26,9 @@ if __name__=="__main__":
     print(f"type[timedelta] to insert into databases like PostgreSQL:{elapsed_time}")
     print(f"timedelta[seconds]:{elapsed_time.seconds}")
     
+    parse_elapsed_time = Chronometer.parse_elapsed_time("20:3:35")
+    print(f"parse_elapsed_time[20:3:35]:{parse_elapsed_time}")
+
+    parse_elapsed_time = Chronometer.parse_elapsed_time("1:1")
+    print(f"parse_elapsed_time[1:1]:{parse_elapsed_time}")
+        

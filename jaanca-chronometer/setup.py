@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 COMPANY_NAME="jaanca"
 PACKAGE_NAME = "jaanca-chronometer"
-VERSION = "0.1.4"
+VERSION = "0.1.5"
 
 install_requires = []
 
