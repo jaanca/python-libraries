@@ -34,6 +34,7 @@ pip install jaanca-chronometer --upgrade
 # Example of use
 
 ```python
+from datetime import timedelta
 from jaanca_chronometer import Chronometer
 import time
 
@@ -46,7 +47,21 @@ if __name__=="__main__":
     time.sleep(1)
     chronometer.stop()
     elapsed_time=str(chronometer.get_elapsed_time())
-    print(elapsed_time)
+    print(f"type[str]:{elapsed_time}")
+
+    chronometer.start()
+    time.sleep(2)
+    chronometer.stop()
+    elapsed_time=str(chronometer.get_elapsed_time())
+    print(f"type[str]:{elapsed_time}")
+
+    chronometer.start()
+    time.sleep(3)
+    chronometer.stop()
+    elapsed_time:timedelta=chronometer.get_elapsed_time(interval_format=False)
+    print(f"type[timedelta] to insert into databases like PostgreSQL:{elapsed_time}")
+    print(f"timedelta[seconds]:{elapsed_time.seconds}")
+    
 ```
 
 ---
@@ -114,5 +129,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Completion of testing and launch into production.
 
 ## [0.1.3] - 2024-05-23
-### Added
+### Changed
 - Documentation improvements.
+
+## [0.1.4] - 2024-06-20
+### Changed
+- It is added to the get_elapsed_time function to return the elapsed time in timedelta format, which is accepted to insert the record into a database engine such as PostgreSQL.
