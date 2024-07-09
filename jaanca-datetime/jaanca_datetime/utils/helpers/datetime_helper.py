@@ -82,3 +82,32 @@ class DateTimeHelper:
         else:
             return date_destination
 
+    @classmethod
+    def is_valid_datetime_format(cls,datetime_string:str,datetime_format:str)->bool:
+        '''Description
+        
+        ####Example
+        from jaanca_datetime import DateTimeHelper, App,TimeZonesPytz
+
+        if __name__=="__main__":
+            datetime_data="2024-08-22 14:02:02"
+            datetime_format=App.Time.STANDARD_FORMAT_DATE
+            is_valid_format=DateTimeHelper.is_valid_datetime_format(datetime_data,datetime_format)
+            print(f"datetime_data[{datetime_format}]:[{datetime_data}]: is_valid_format={is_valid_format}")
+
+            datetime_data="2024-08-22"
+            datetime_format="%Y-%m-%d"
+            is_valid_format=DateTimeHelper.is_valid_datetime_format(datetime_data,datetime_format)
+            print(f"datetime_data[{datetime_format}]:[{datetime_data}]: is_valid_format={is_valid_format}")
+
+            datetime_data="2024-08-22"
+            datetime_format=App.Time.STANDARD_FORMAT_DATE
+            is_valid_format=DateTimeHelper.is_valid_datetime_format(datetime_data,datetime_format)
+            print(f"datetime_data[{datetime_format}]:[{datetime_data}]: is_valid_format={is_valid_format}")
+
+        '''
+        try:
+            datetime.strptime(datetime_string, datetime_format)
+            return True
+        except ValueError:
+            return False

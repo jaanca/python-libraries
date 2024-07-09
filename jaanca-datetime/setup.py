@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 COMPANY_NAME="jaanca"
 PACKAGE_NAME = "jaanca-datetime"
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 install_requires = ["pytz>=2024.1"]
 
