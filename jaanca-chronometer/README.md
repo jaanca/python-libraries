@@ -145,3 +145,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.5] - 2024-06-20
 ### Added
 - New parse_elapsed_time functionality to convert str to timedelta.
+
+## [0.1.6] - 2024-07-11
+### Added
+- New sum_elapsed_times functionality to takes two times in HH:mm format, converts them to seconds, adds them and converts the result back to HH:mm.
