@@ -1,11 +1,13 @@
 from datetime import datetime
 from enum import StrEnum
 import pytz
+import random
 
 class App:
     class Time(StrEnum):
         POSTGRESQL_FORMAT_DATE="%Y-%m-%d %H:%M:%S%z" # 2024-04-26 20:56:31.420023+00:00
         STANDARD_FORMAT_DATE="%Y-%m-%d %H:%M:%S" # 2024-04-26 20:56:31
+        LOG_FORMAT_DATE="%Y%m%d_%H%M%S" # 20240426_205631
 
 class TimeZonesPytz:
     class America(StrEnum):
@@ -86,7 +88,9 @@ class DateTimeHelper:
     def is_valid_datetime_format(cls,datetime_string:str,datetime_format:str)->bool:
         '''Description
         
-        ####Example
+        ### Example
+
+        ```Python
         from jaanca_datetime import DateTimeHelper, App,TimeZonesPytz
 
         if __name__=="__main__":
@@ -105,9 +109,33 @@ class DateTimeHelper:
             is_valid_format=DateTimeHelper.is_valid_datetime_format(datetime_data,datetime_format)
             print(f"datetime_data[{datetime_format}]:[{datetime_data}]: is_valid_format={is_valid_format}")
 
+        ```
         '''
         try:
             datetime.strptime(datetime_string, datetime_format)
             return True
         except ValueError:
             return False
+    
+    @classmethod
+    def get_filename_datetime_hash(cls, prefix_name:str="report",extension:str=".log",hash_range_init:int=10000, hash_range_end:int=99999):
+        '''Description
+        Returns the file name with current date and time concatenated with range numbers
+        :return str: <name_YYYYMMDD_HHmmss>_<int_range><extension>
+
+        ### Example
+
+        ```Python
+
+        from jaanca_datetime import DateTimeHelper
+
+        filename=DateTimeHelper.get_filename_datetime_hash("report",".log")
+        print(filename)
+
+        # Output: <name_YYYYMMDD_HHmmss>_<int_range><extension>
+        # report_20240712_150958_50012.log
+        ```
+        '''
+        prefix=DateTimeHelper.get_datetime_now(App.Time.LOG_FORMAT_DATE)
+        hash_str=random.randint(hash_range_init, hash_range_end)
+        return f"{prefix_name}_{prefix}_{hash_str}{extension}"
